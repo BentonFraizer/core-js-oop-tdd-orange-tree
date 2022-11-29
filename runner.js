@@ -1,5 +1,5 @@
-let orange = new Orange();
-let tree = new OrangeTree();
+const orange = new Orange();
+const tree = new OrangeTree();
 const reportsBlock = document.getElementById("reports");
 
 // Let seasons pass until the tree is ready to bear fruit.
