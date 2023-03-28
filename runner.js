@@ -1,6 +1,9 @@
+// const Orange = require('./orange');
+// const OrangeTree = require('./orange-tree');
+
 const orange = new Orange();
 const tree = new OrangeTree();
-const reportsBlock = document.getElementById("reports");
+const reportsBlock = document.getElementById('reports');
 
 // Let seasons pass until the tree is ready to bear fruit.
 while (!tree.isMature()) {
@@ -16,10 +19,16 @@ while (!tree.isDead()) {
     harvestedOranges.push(tree.pickAnOrange());
   }
 
-  let averageOrangeDiameter;
+  let sumOrangesDiameters = 0;
+  for (let i = 0; i < harvestedOranges.length; i += 1) {
+    sumOrangesDiameters += harvestedOranges[i].diameter;
+  }
+
+  const averageOrangeDiameter = sumOrangesDiameters / harvestedOranges.length;
+
   // averageOrangeDiameter = Need to calculate the average diameter for the harvest.
 
-  const report = document.createElement("div");
+  const report = document.createElement('div');
   report.innerHTML = `
       <b>HARVEST_REPORT</b>
       <br/>
@@ -39,6 +48,6 @@ while (!tree.isDead()) {
   reportsBlock.appendChild(report);
 }
 
-const lastReport = document.createElement("div");
-lastReport.innerHTML = "<h2>Alas, the tree, she is dead!</h2>";
+const lastReport = document.createElement('div');
+lastReport.innerHTML = '<h2>Alas, the tree, she is dead!</h2>';
 reportsBlock.appendChild(lastReport);
