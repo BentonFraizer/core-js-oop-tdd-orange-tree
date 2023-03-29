@@ -24,7 +24,7 @@ while (!tree.isDead()) {
     sumOrangesDiameters += harvestedOranges[i].diameter;
   }
 
-  const averageOrangeDiameter = sumOrangesDiameters / harvestedOranges.length;
+  const averageOrangeDiameter = (sumOrangesDiameters / harvestedOranges.length);
 
   // averageOrangeDiameter = Need to calculate the average diameter for the harvest.
 
@@ -38,7 +38,7 @@ while (!tree.isDead()) {
       <br/>
       Harvest: ${harvestedOranges.length} oranges with an average
       <br/>
-      diameter of ${averageOrangeDiameter} inches.
+      diameter of ${Math.round(averageOrangeDiameter, -2)} inches.
       <br/>
       <br/>
       -----------------------

@@ -38,16 +38,12 @@ class OrangeTree {
   pickAnOrange() {
     //  Returns an Orange if there are any
     //  Raises a NoOrangesError otherwise
-    let wantedOrange;
     if (!this.hasOranges()) {
       throw Error('This tree has no oranges');
-    } else {
-      wantedOrange = this.oranges[0];
-      this.oranges = this.oranges.splice(0, 1);
     }
 
     //  orange-picking logic goes here
-    return wantedOrange;
+    return this.oranges.pop();
   }
 
   isDead() {
